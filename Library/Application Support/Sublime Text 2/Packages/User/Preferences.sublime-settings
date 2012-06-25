@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+	"font_size": 13.0,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": false
+}
