@@ -14,13 +14,16 @@
     (package-install p)))
 
 (require 'auto-complete-config)
+(ac-config-default)
 
 (set-default-font "-apple-Monaco-medium-normal-normal-*-13-*-*-*-m-0-iso10646-1")
-
 (load-theme 'solarized-light t)
+
+(global-linum-mode 1)
 
 (setq python-indent 4)
 (setq js-indent-level 2)
+(setq html-indent-level 2)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

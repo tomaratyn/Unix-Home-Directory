@@ -1,0 +1,7 @@
+*.pyc
+*~
+.DS_Store
+bin
+lib
+include
+.idea
