@@ -5,3 +5,5 @@ bin
 lib
 include
 .idea
+readline-6.2.0-py2.6-macosx-10.6-universal.egg
+node_modules
