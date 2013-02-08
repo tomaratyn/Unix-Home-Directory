@@ -14,4 +14,10 @@ colorscheme solarized
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
+if has('gui_running')
+  set guifont=Monaco:h13
+endif
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType js setlocal shiftwidth=2 tabstop=2
 
