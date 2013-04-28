@@ -1,4 +1,4 @@
-export PS1='\u@\H \w\$ '
+export PS1='🌟  \u@\H \w\$ '
 
 has_brew=`which brew`
 if [[ $has_brew ]]; then
