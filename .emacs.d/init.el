@@ -2,6 +2,10 @@
 (add-to-list 'load-path "~/.emacs.d/color-themes/emacs-color-theme-solarized")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/color-themes/emacs-color-theme-solarized")
 
+; (add-to-list 'exec-path "/usr/local/texlive/2010/bin/x86_64-darwin")
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2010/bin/x86_64-darwin"))
+
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
