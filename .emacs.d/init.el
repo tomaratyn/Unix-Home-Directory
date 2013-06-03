@@ -25,11 +25,25 @@
 
 (global-linum-mode 1)
 
+(add-hook 'html-mode-hook
+          (lambda()
+            (auto-fill-mode 0)
+            (setq sgml-basic-offset 4)))
+
+
+; (require 'web-mode)
+; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+
 (require 'auto-complete-config)
 (ac-config-default)
-
-(setq auto-mode-alist (cons '("\\.asp$" . html-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.php$" . html-mode) auto-mode-alist))
 
 (setq python-indent 4)
 (setq js-indent-level 2)
