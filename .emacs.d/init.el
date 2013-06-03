@@ -18,6 +18,7 @@
 (defvar my-packages '(starter-kit color-theme markdown-mode)
   "A list of packages to ensure are installed at launch.")
 
+(require 'idle-highlight-mode)
 
 (set-default-font "-apple-Monaco-medium-normal-normal-*-13-*-*-*-m-0-iso10646-1")
 (load-theme 'solarized-light t)
