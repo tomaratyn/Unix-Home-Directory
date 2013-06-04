@@ -1,8 +1,19 @@
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+(setq visible-bell t
+      inhibit-startup-message t
+      color-theme-is-global t) 
+
+; remember my place in a file
+(setq-default save-place t)
+(setq save-place-file (concat user-emacs-directory "places") ) 
+(require 'saveplace)   
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/color-themes/emacs-color-theme-solarized")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/color-themes/emacs-color-theme-solarized")
 
-; (add-to-list 'exec-path "/usr/local/texlive/2010/bin/x86_64-darwin")
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2010/bin/x86_64-darwin"))
 
@@ -15,20 +26,47 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit color-theme markdown-mode)
+(defvar my-packages '(color-theme markdown-mode web-mode ido-ubiquitous smex )
   "A list of packages to ensure are installed at launch.")
+
+
+; IDO mode config - much nicer mode line.
+(require 'ido)
+(ido-mode t)
+(ido-ubiquitous t)
+(smex-initialize)
+(global-set-key [(meta x)] 'smex)
+(setq ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-auto-merge-work-directories-length nil
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point 'guess
+      ido-use-virtual-buffers t
+      ido-handle-duplicate-virtual-buffers 2
+      ido-max-prospects 10)
+
 
 (require 'idle-highlight-mode)
 
+; use a nicer font.
 (set-default-font "-apple-Monaco-medium-normal-normal-*-13-*-*-*-m-0-iso10646-1")
 (load-theme 'solarized-light t)
 
+; always display line numbers
 (global-linum-mode 1)
 
 (add-hook 'html-mode-hook
           (lambda()
             (auto-fill-mode 0)
             (setq sgml-basic-offset 4)))
+
+; Helps manage parens in lisp.
+(require 'paredit)
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook
+	    (lambda ()
+	      (paredit-mode t)
+	      (show-paren-mode t)))
 
 
 (require 'web-mode)
